@@ -2,6 +2,8 @@
 
 ## Description
 
+Time limit: 4 hours
+
 You are creating an application for managing your robot collection.<br/><br/>
 This project is intended to provide you with an easy starting point to demonstrate your skills.<br/>
 A bare [Create React App](https://github.com/facebook/create-react-app) project is provided as well as a basic [express](https://expressjs.com/) API.<br/>
