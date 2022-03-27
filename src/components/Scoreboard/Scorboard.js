@@ -1,12 +1,14 @@
-
+import NavBar from "../Navbar/Navbar";
 
 function Scoreboard() {
-    return (
-      <div className='Scoreboard'>
-        Scoreboard
-      </div>
-    );
-  }
-  
-  export default Scoreboard;
-  
+  return (
+    <>
+      <NavBar />
+      <div className="Scoreboard" />
+      <h1>Scoreboard</h1>
+      <div />
+    </>
+  );
+}
+
+export default Scoreboard;

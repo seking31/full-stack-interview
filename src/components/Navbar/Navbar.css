@@ -1,0 +1,29 @@
+nav {
+  top: 0;
+  width: 100%;
+}
+
+.nav-container {
+  list-style-type: none;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .nav-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .link {
+    width: 100%;
+    text-align: center;
+  }
+}
