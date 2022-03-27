@@ -6,14 +6,20 @@ body {
 }
 
 .robot-container {
-  list-style-type: none;
-  height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+
+.color-box {
+  display: inline;
+  float: left;
 }
 
 input {
+  margin-left: 5px;
+}
+
+h4 label {
   margin: 5px;
 }
 

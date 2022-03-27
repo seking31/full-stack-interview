@@ -9,9 +9,16 @@ export const robotSlice = createSlice({
       { id: 2, name: "joice", color: "#FFJJ00", attack: "3", defense: "7" },
     ],
   },
-  reducers: {},
+  reducers: {
+    removeRobot: (state, action) => {
+      const updatedArray = state.value.filter(
+        (item) => item.id !== action.payload
+      );
+      state.value = updatedArray;
+    },
+  },
 });
 
-export const {} = robotSlice.actions;
+export const { removeRobot } = robotSlice.actions;
 
 export default robotSlice.reducer;
