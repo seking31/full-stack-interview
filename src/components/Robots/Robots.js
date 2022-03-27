@@ -1,18 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import RobotList from "./RobotsList";
 import NavBar from "../Navbar/Navbar";
-import { useSelector } from "react-redux";
+import "./Robots.css";
 
 function Robots() {
-  const currentRobots = useSelector((state) => state.robots.value);
   return (
-    <div className="Robots">
+    <div>
       <NavBar />
       <h1>Robots</h1>
-      {currentRobots.map((robot, i) => (
-        <div key={i}>
-          <h1>{robot.name}</h1>
-        </div>
-      ))}
+      <div className="robot-container">
+        <RobotList />
+      </div>
     </div>
   );
 }

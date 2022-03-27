@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.robot-container {
+  list-style-type: none;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  margin: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .robot-container {
+    flex-direction: column;
+    height: auto;
+  }
+}
