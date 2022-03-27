@@ -19,6 +19,11 @@ input {
   margin-left: 5px;
 }
 
+button {
+  margin-top: 6px;
+  height: 28px;
+}
+
 h4 label {
   margin: 5px;
 }
