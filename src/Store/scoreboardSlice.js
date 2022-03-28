@@ -3,11 +3,18 @@ import { createSlice } from "@reduxjs/toolkit";
 export const scoreboardSlice = createSlice({
   name: "scoreboard",
   initialState: {
-    value: [{ name: "JOE" }, { name: "JOES" }, { name: "JOICE" }],
+    value: [
+      { name: "JOE", date: "Sat Mar 26 2022" },
+      { name: "JOES", date: "Fri Mar 25 2022" },
+      { name: "JOICE", date: "Sat Thu 25 2022" },
+    ],
   },
   reducers: {
     addWiningRobot: (state, action) => {
-      const newObject = { ...action.payload };
+      const newObject = { name: action.payload };
+      const timeElapsed = Date.now();
+      const today = new Date(timeElapsed);
+      newObject.date = today.toDateString();
       state.value = [...state.value, newObject];
     },
   },
