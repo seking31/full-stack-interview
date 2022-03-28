@@ -1,8 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
-import robotReducer from './robotSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import robotReducer from "./robotSlice";
+import scoreboardReducer from "./scoreboardSlice";
 
 export default configureStore({
   reducer: {
-    robots: robotReducer
-  }
-})
+    robots: robotReducer,
+    scoreboard: scoreboardReducer,
+  },
+});

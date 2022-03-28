@@ -1,0 +1,11 @@
+button {
+  margin: 10px;
+}
+
+.dropdown-container {
+  display: inline-flex;
+}
+
+h3 {
+  margin: auto;
+}

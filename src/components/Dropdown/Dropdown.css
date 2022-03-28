@@ -1,0 +1,8 @@
+select {
+  height: fit-content;
+  margin: 0px 15px;
+}
+
+.dropdown-container {
+  display: inline-flex;
+}

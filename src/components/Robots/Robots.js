@@ -17,7 +17,7 @@ function Robots() {
       </button>
       <div className="robot-container">
         <RobotList />
-        {makeNewRobot && <NewRobot />}
+        {makeNewRobot && <NewRobot handelMakeNewRobot={setmakeNewRobot} />}
       </div>
     </div>
   );

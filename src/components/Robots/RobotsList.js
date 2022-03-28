@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { removeRobot } from "../../Store/robotSlice";
 import { useDispatch } from "react-redux";
+import "./Robots.css";
 
 function RobotList() {
   const dispatch = useDispatch();
@@ -14,17 +15,21 @@ function RobotList() {
     dispatch(removeRobot(id));
   };
 
+  const handleSeeRobotClick = (id) => {
+    setRobotID(id);
+  };
+
   return (
     <div className="robot-list">
       {currentRobots.map((robot, i) => (
         <div key={i}>
-          <h4>Name: {robot.name} </h4>
-          {robot.id !== currentID && (
+          <div>
+            <h4>Name: {robot.name} </h4>
             <FontAwesomeIcon
-              onClick={() => setRobotID(robot.id)}
+              onClick={() => handleSeeRobotClick(robot.id)}
               icon={faEye}
             />
-          )}
+          </div>
           {robot.id === currentID && (
             <React.Fragment>
               <div className="color-box">

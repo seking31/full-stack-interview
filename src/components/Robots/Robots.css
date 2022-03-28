@@ -10,6 +10,14 @@ body {
   justify-content: center;
 }
 
+.new-robot-container {
+  text-align: start;
+}
+
+.robot-list {
+  margin-right: 30px;
+}
+
 .color-box {
   display: inline;
   float: left;
