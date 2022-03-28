@@ -1,3 +1,4 @@
+import React from "react";
 import NavBar from "../Navbar/Navbar";
 import { useSelector } from "react-redux";
 
