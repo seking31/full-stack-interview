@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Dropdown from "../Dropdown/Dropdown";
 import NavBar from "../Navbar/Navbar";
 import { useSelector } from "react-redux";
@@ -9,26 +9,35 @@ import "./Fight.css";
 function Fight() {
   const dispatch = useDispatch();
   const currentRobots = useSelector((state) => state.robots.value);
-  const [firstRobot, setFirstRobot] = useState("joe");
-  const [secondRobot, setSecondRobot] = useState("joe");
-  const [winner, setWinner] = useState("joe");
+  const [firstRobot, setFirstRobot] = useState(currentRobots[0].name);
+  const [secondRobot, setSecondRobot] = useState(currentRobots[0].name);
+  const [clicked, setclicked] = useState(false);
+  const [winner, setWinner] = useState("");
+
+  useEffect(() => {
+    if (clicked) {
+      alert(`winner is ${winner}`);
+    }
+  }, [winner]);
 
   const handelWinner = () => {
-    Math.random() < 0.5 ? setWinner(firstRobot) : setWinner(secondRobot);
     dispatch(addWiningRobot(winner));
   };
 
   const handleFight = () => {
+    setclicked(true);
+    Math.random() < 0.5 ? setWinner(firstRobot) : setWinner(secondRobot);
     handelWinner();
-    alert(`winner is ${winner}`);
   };
 
   const handleSetFirstRobot = (e) => {
-    setFirstRobot(e.target.value);
+    const newFirstRobotPick = e.target.value;
+    setFirstRobot(newFirstRobotPick);
   };
 
   const handleSetSecondRobot = (e) => {
-    setSecondRobot(e.target.value);
+    const newSecondRobotPick = e.target.value;
+    setSecondRobot(newSecondRobotPick);
   };
 
   return (
@@ -47,7 +56,7 @@ function Fight() {
           value={secondRobot}
         />
       </div>
-      <button onClick={() => handleFight()}>Fight</button>
+      <button onClick={handleFight}>Fight</button>
     </>
   );
 }
